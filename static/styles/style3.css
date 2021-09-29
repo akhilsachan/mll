@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+body{
+	margin-bottom: 0;
+	font-size: 16px;
+	background-color: #009688;
+	font-family: 'Montserrat', sans-serif;
+	font-weight:400;
+}
+
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	outline:none;
+}
+
+.custom-box{
+	max-width:700px;
+	background-color: #ffffff;
+	margin:40px auto;
+	padding:30px;
+	border-radius:10px;
+	animation:fadeInRight 1s ease;
+}
+@keyframes fadeInRight{
+	0%{
+		transform : translate(40px);
+		opacity : 0;
+	}
+	100%{
+		transform : translate(0px);
+		opacity : 1;
+	}
+}
+
+.custom-box::before,
+.custom-box::after{
+	content:'';
+	clear:both;
+	display:table;
+}
+
+.custom-box.hide{
+	display:none;
+}
+
+/* .home-box input radio{ */
+	/* display:none; */
+/* } */
+
+.home-box h2
+{
+	font-size:22px;
+	color:#000000;
+	font-weight:00;
+	margin-bottom:15px;
+	line-height:25px;
+}
+
+.home-box h3
+{
+	font-size:18px;
+	color:#000000;
+	font-weight:500;
+	margin-bottom:15px;
+	line-height:25px;
+}
+
+.home-box p
+{
+	font-size:16px;
+	margin-bottom:5px;
+	line-height:22px;
+	color:#000000;
+	margin-top:25px;
+	font-weight:400;
+}
+
+input[type=text]
+{
+	font-size:15px;
+	color:#000000;
+	font-weight:500;
+	margin-bottom:15px;
+	line-height:25px;
+	width:40%;
+	border:1px solid #aaa;
+	border-radius:4px;
+	margin:8px 0;
+	outline:none;
+	padding:8px;
+	height:45px;
+	margin-right:10px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+input[type=submit]
+{
+	background-color: #009688;
+	color:#ffffff;
+	
+	border:none;
+	padding:10px 20px 10px 20px;
+	border-radius:10px;
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+	cursor:pointer;
+	margin:auto;
+	float:left;
+	margin-left:190px;
+	display:inline;
+}
+
+input[type=reset]
+{
+	background-color: #009688;
+	color:#ffffff;
+	
+	border:none;
+	padding:10px 25px 10px 25px;
+	border-radius:10px;
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+	cursor:pointer;
+	margin:auto;
+	float:right;
+	margin-right:230px;
+	display:inline;
+}
+
+.home-box p span
+{
+	font-weight:500;
+}
+
+.home-box .btn{
+	margin-top:20px;	
+}
+
+.btn{
+	padding: 15px 40px;
+	background-color: #009688;
+	color:#ffffff;
+	border:none;
+	border-radius:10px;
+	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+	cursor:pointer;
+	display:inline-block;
+}
+
+#RB_Text{
+	font-size: 18px;
+	font-weight:500;
+	padding-bottom:5px;
+}
+
+/* /* The container 
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button 
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button 
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color 
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background 
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) 
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked 
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) 
+.container .checkmark:after {
+ 	top: 6px;
+	left: 6px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+} */
+
+.container2 {
+  display: inline;
+  position: relative;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  padding-right:20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button  */
+.checkmark2 {
+  display:inline;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #e0e0d1;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color  */
+.container2:hover input ~ .checkmark2 {
+  background-color: #e0e0d1;
+}
+
+/* When the radio button is checked, add a blue background   */
+.container2 input:checked ~ .checkmark2 {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked)   */
+.checkmark2:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked  */
+.container2 input:checked ~ .checkmark2:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle)   */
+.container2 .checkmark2:after {
+ 	top: 5px;
+	left: 5px;
+	width: 5px;
+	height: 5px;
+	border-radius: 80%;
+	background: white;
+}
