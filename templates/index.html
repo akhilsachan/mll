@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Employee Survey</title>
+	<meta name = 'viewport' content='width=device-width, initial-scale=1'>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style3.css') }}">
+	<!-- <link rel = 'stylesheet' href='style.css'> -->
+</head>
+<body>
+<!-- When the submit button is pressed, on the same page..a POST request to Python is done -->
+	<div id='popup' class='home-box custom-box'>
+	<form name='passdata' action="{{ url_for('predict')}}" method="POST">
+	
+		<h2>Please fill out this employee survey.</h2>
+		<h3>You're response is important to us.</h3>	
+		
+		<input type="text" id = 'Emp_no' name = 'Emp_no' placeholder="4 Digit Employee Code" value = '' maxlength='4'>
+		
+		<input type="text" name = 'Age' id = 'Age' placeholder="Current Age" maxlength="2">
+		
+		<input type="text" name = 'DistanceFromHome' id = 'DistanceFromHome' placeholder="Distance From Home" maxlength="2">
+		<input type="text" name = 'MonthlyIncome' id = 'MonthlyIncome' placeholder="Monthly Income(Rs.)" maxlength="6">
+		<input type="text" name = 'NumCompaniesWorked' id = 'NumCompaniesWorked' placeholder="No. of Companies Worked" maxlength="2">
+		<input type="text" name = 'PercentSalaryHike' id = 'PercentSalaryHike' placeholder="% Salary Hike" maxlength="2">
+		<input type="text" name = 'TotalWorkingYears' id = 'TotalWorkingYears' placeholder="Total Working Years" maxlength="2">
+		<input type="text" name = 'TrainingTimesLastYear' id = 'TrainingTimesLastYear' placeholder="No. of trainings done last year" maxlength="1">
+		<input type="text" name = 'YearsAtCompany' id = 'YearsAtCompany' placeholder="Years at current company" maxlength="2">
+		<input type="text" name = 'YearsInCurrentRole' id = 'YearsInCurrentRole' placeholder="Years in current role" maxlength="2">
+		<input type="text" name = 'YearsSinceLastPromotion' id = 'YearsSinceLastPromotion' placeholder="Years Since Last Promotion" maxlength="2">
+		<input type="text" name = 'YearsWithCurrManager' id = 'YearsWithCurrManager' placeholder="Years with Current Manager" maxlength="2">
+		
+		<p id = 'RB_Text'>Business Travel:</p>
+		
+		<label class="container2">Non-Travel&nbsp&nbsp
+			<input type="radio" name="BusinessTravel" value='Non-Travel'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Travel Rarely&nbsp&nbsp
+			<input type="radio" name="BusinessTravel" value='Travel_Rarely'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Travel Frequently&nbsp&nbsp
+			<input type="radio" name="BusinessTravel" value='Travel_Frequently'>
+			<span class="checkmark2"></span>
+		</label></label></label>
+		
+		<p id = 'RB_Text'>Department:</p>
+		<label class="container2">Research & Development&nbsp&nbsp
+			<input type="radio" name="Department" value='Research & Development'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Sales&nbsp&nbsp
+			<input type="radio" name="Department" value='Sales'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Human Resources&nbsp&nbsp
+			<input type="radio" name="Department" value='Human Resources'>
+			<span class="checkmark2"></span>
+		</label></label></label>
+		
+		<p id = 'RB_Text'>Education:</p>
+		<label class="container2">Below College&nbsp&nbsp
+			<input type="radio" name="Education" value='1'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">College&nbsp&nbsp
+			<input type="radio" name="Education" value='2'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Bachelor&nbsp&nbsp
+			<input type="radio" name="Education" value='3'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Master&nbsp&nbsp
+			<input type="radio" name="Education" value='4'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Doctor&nbsp&nbsp
+			<input type="radio" name="Education" value='5'>
+			<span class="checkmark2"></span>
+		</label></label></label></label></label>
+		
+		<p id = 'RB_Text'>Education Field:</p>
+		<label class="container2">Medical&nbsp&nbsp
+			<input type="radio" name="EducationField" value='Medical'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Life Sciences&nbsp&nbsp
+			<input type="radio" name="EducationField" value='Life Sciences'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Marketing&nbsp&nbsp
+			<input type="radio" name="EducationField" value='Marketing'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Technical Degree<br><br>
+		<input type="radio" name="EducationField" value='Technical Degree'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Human Resources&nbsp&nbsp
+		<input type="radio" id = 'speacial1' name="EducationField" value='Human Resources'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Other&nbsp&nbsp
+			<input type="radio" name="EducationField" value='Other'>
+			<span class="checkmark2"></span>
+		</label></label></label></label></label></label>
+		
+		<p id = 'RB_Text'>Environment Satisfaction:</p>
+		<label class="container2">Low
+			<input type="radio" name="EnvironmentSatisfaction" value='1'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Medium&nbsp&nbsp
+			<input type="radio" name="EnvironmentSatisfaction" value='2'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">High&nbsp&nbsp
+			<input type="radio" name="EnvironmentSatisfaction" value='3'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Very High&nbsp&nbsp
+			<input type="radio" name="EnvironmentSatisfaction" value='4'>
+			<span class="checkmark2"></span>
+		</label></label></label></label>
+		
+		<p id = 'RB_Text'>Gender:</p>
+		<label class="container2">Male&nbsp&nbsp
+			<input type="radio" name="Gender" value='Male'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Female&nbsp&nbsp
+			<input type="radio" name="Gender" value='Female'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Others&nbsp&nbsp
+			<input type="radio" name="Gender" value='Male'>
+			<span class="checkmark2"></span>
+		</label></label></label>
+		
+		<p id = 'RB_Text'>Job Involvement:</p>
+		<label class="container2">Low&nbsp&nbsp
+			<input type="radio" name="JobInvolvement" value='1'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Medium&nbsp&nbsp
+			<input type="radio" name="JobInvolvement" value='2'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">High&nbsp&nbsp
+			<input type="radio" name="JobInvolvement" value='3'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Very High&nbsp&nbsp
+			<input type="radio" name="JobInvolvement" value='4'>
+			<span class="checkmark2"></span>
+		</label></label></label></label>
+		
+		<p id = 'RB_Text'>Job Level:</p>
+		<label class="container2">Associate&nbsp&nbsp
+			<input type="radio" name="JobLevel" value='1'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Analyst&nbsp&nbsp
+			<input type="radio" name="JobLevel" value='2'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Senior Analyst&nbsp&nbsp
+			<input type="radio" name="JobLevel" value='3'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Team Lead&nbsp&nbsp
+			<input type="radio" name="JobLevel" value='4'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Consultant&nbsp&nbsp
+			<input type="radio" name="JobLevel" value='5'>
+			<span class="checkmark2"></span>
+		</label></label></label></label></label>
+		
+		<p id = 'RB_Text'>Job Role:</p>
+		<label class="container2">Laboratory Technician&nbsp&nbsp
+			<input type="radio" name="JobRole" value='Laboratory Technician'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Manufacturing Director&nbsp&nbsp
+			<input type="radio" name="JobRole" value='Manufacturing Director'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Sales Executive&nbsp&nbsp<br><br>
+			<input type="radio" name="JobRole" value='Sales Executive'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Research Scientist&nbsp&nbsp
+			<input type="radio" name="JobRole" value='Research Scientist'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Sales Representative&nbsp&nbsp
+			<input type="radio" name="JobRole" value='Sales Representative'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Healthcare Representative&nbsp&nbsp<br></br>
+			<input type="radio" name="JobRole" value='Healthcare Representative'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Research Director&nbsp&nbsp
+			<input type="radio" name="JobRole" value='Research Director'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Human Resources&nbsp&nbsp
+			<input type="radio" name="JobRole" value='Human Resources'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Manager&nbsp&nbsp
+			<input type="radio" name="JobRole" value='Manager'>
+			<span class="checkmark2"></span>
+		</label></label></label></label></label></label></label></label></label>
+		
+		<p id = 'RB_Text'>Job Satisfaction:</p>
+		<label class="container2">Low&nbsp&nbsp
+			<input type="radio" name="JobSatisfaction" value='1'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Medium&nbsp&nbsp
+			<input type="radio" name="JobSatisfaction" value='2'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">High&nbsp&nbsp
+			<input type="radio" name="JobSatisfaction" value='3'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Very High&nbsp&nbsp
+			<input type="radio" name="JobSatisfaction" value='4'>
+			<span class="checkmark2"></span>
+		</label></label></label></label>
+		
+		<p id = 'RB_Text'>Work Life Balance:</p>
+		<label class="container2">Bad&nbsp&nbsp
+			<input type="radio" name="WorkLifeBalance" value='1'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Good&nbsp&nbsp
+			<input type="radio" name="WorkLifeBalance" value='2'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Better&nbsp&nbsp
+			<input type="radio" name="WorkLifeBalance" value='3'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Best&nbsp&nbsp
+			<input type="radio" name="WorkLifeBalance" value='4'>
+			<span class="checkmark2"></span>
+		</label></label></label></label>
+		
+		<p id = 'RB_Text'>Marital Status:</p>
+		<label class="container2">Single&nbsp&nbsp
+			<input type="radio" name="MaritalStatus" value='Single'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Married&nbsp&nbsp
+			<input type="radio" name="MaritalStatus" value='Married'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Divorced&nbsp&nbsp
+			<input type="radio" name="MaritalStatus" value='Divorced'>
+			<span class="checkmark2"></span>
+		</label></label></label>
+		
+		<p id = 'RB_Text'>Overtime:</p>
+		<label class="container2">Yes&nbsp&nbsp
+			<input type="radio" name="OverTime" value='Yes'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">No&nbsp&nbsp
+			<input type="radio" name="OverTime" value='No'>
+			<span class="checkmark2"></span>
+		</label></label>
+		
+		<p id = 'RB_Text'>Stock Option Level:</p>
+		<label class="container2">No stocks&nbsp&nbsp
+			<input type="radio" name="StockOptionLevel" value='0'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Less Stocks&nbsp&nbsp
+			<input type="radio" name="StockOptionLevel" value='1'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Moderate Stocks&nbsp&nbsp
+			<input type="radio" name="StockOptionLevel" value='2'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Lots of Stocks&nbsp&nbsp
+			<input type="radio" name="StockOptionLevel" value='3'>
+			<span class="checkmark2"></span>
+		</label></label></label></label>
+		
+		<p id = 'RB_Text'>Relationship Satisfaction:</p>
+		<label class="container2">Low&nbsp&nbsp
+			<input type="radio" name="RelationshipSatisfaction" value='1'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Medium&nbsp&nbsp
+			<input type="radio" name="RelationshipSatisfaction" value='2'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">High&nbsp&nbsp
+			<input type="radio" name="RelationshipSatisfaction" value='3'>
+			<span class="checkmark2"></span>
+		
+		<label class="container2">Very High&nbsp&nbsp
+			<input type="radio" name="RelationshipSatisfaction" value='4'>
+			<span class="checkmark2"></span>
+		</label></label></label></label>
+		<br><br><br>
+		
+		<input type='submit' name='Submit'></input>
+		
+		<input type="reset" name = 'Reset' value="Reset"></input>
+	</div>
+	</form>
+</body>
+</html>

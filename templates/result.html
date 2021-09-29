@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prediction Results</title>
+    <meta name = 'viewport' content='width=device-width, initial-scale=1'>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style3.css') }}">
+</head>
+<body>
+
+	<div id='popup' class='home-box custom-box'>
+	
+	<h2 style="color:blue;">Predictions based on your input.</h2>
+	
+	<h3 style="color:black;">It has been estimated that you <u>{{prediction[0]}}</u> leave the company &#x{{prediction[1]}}!</h3>
+
+	</div>
+
+</body>
+</html>
