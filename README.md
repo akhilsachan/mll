@@ -1,5 +1,2 @@
-# Employee_Attrition_Prediction
+https://emp-attrition-detect.herokuapp.com/
 
-## Please find the web app : https://emp-attrition-detect.herokuapp.com/
-
-ML Project to detect Employee Attrition
